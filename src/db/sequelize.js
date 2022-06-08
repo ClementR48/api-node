@@ -3,7 +3,7 @@ const PokemonModel = require("../models/pokemon");
 const UserModel = require("../models/user");
 const pokemons = require("./mock-pokemon");
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const sequelize = new Sequelize("pokedex", "root", "", {
   host: "localhost",
