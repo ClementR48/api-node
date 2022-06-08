@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const PokemonModel = require('../models/pokemon')
 const UserModel = require('../models/user')
 const pokemons = require('./mock-pokemon')
