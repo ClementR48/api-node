@@ -33,7 +33,7 @@ const User = UserModel(sequelize, DataTypes)
 const initDb = () => {
   if(process.env.NODE_ENV === 'production'){
 
-    return sequelize.sync().then(_ => {
+    return sequelize.sync({force: true}).then(_ => {
       pokemons.map(pokemon => {
         Pokemon.create({
           name: pokemon.name,
