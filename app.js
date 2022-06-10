@@ -5,7 +5,7 @@ const cors = require('cors')
 const sequelize = require('./src/db/sequelize')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT ||3000
 
 app
 .use(favicon(__dirname + '/favicon.ico'))
@@ -24,6 +24,8 @@ require('./src/routes/createPokemon')(app)
 require('./src/routes/updatePokemon')(app)
 require('./src/routes/deletePokemon')(app)
 require('./src/routes/login')(app) 
+require('./src/routes/createUser')(app) 
+require('./src/routes/findAllUsers')(app) 
 
 // On gère les routes 404.
 app.use(({res}) => {
