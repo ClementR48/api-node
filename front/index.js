@@ -14,7 +14,8 @@ fetch("https://tranquil-crag-68302.herokuapp.com/api/login", {
     console.log(res);
     return res.token;
   })
-  .then((token) => fecthListPokemon(token));
+  .then((token) => fecthListPokemon(token))
+  .then(() => fetchUsers())
 
 const fecthListPokemon = (token) => {
   fetch("https://tranquil-crag-68302.herokuapp.com/api/pokemons", {
@@ -23,3 +24,10 @@ const fecthListPokemon = (token) => {
     .then((res) => res.json())
     .then((res) => console.log(res));
 };
+
+const fetchUsers = () => {
+  fetch("https://tranquil-crag-68302.herokuapp.com/api/users")
+  
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+}
